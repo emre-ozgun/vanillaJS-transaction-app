@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Transaction Tracker</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<main class="container">
+			<form class="add-user">
+				<input type="text" name="account-name" placeholder="Full Name" />
+				<input
+					type="text"
+					name="account-balance"
+					placeholder="Initial Balance"
+				/>
+				<button type="submit" disabled>Add Account</button>
+				<!-- ADD ACOUNT ICON - POSITION LEFT -->
+			</form>
+			<form class="add-transaction">
+				<div class="transaction-cta">
+					<button type="button" id="from-btn">From</button>
+
+					<button type="button" id="to-btn">To</button>
+				</div>
+				<div class="transaction-cta results" id="transaction-results">
+					<button type="button" id="result-from"></button>
+
+					<button type="button" id="result-to"></button>
+				</div>
+
+				<input
+					id="transaction-amount"
+					type="text"
+					placeholder="Amount"
+					name="amount"
+				/>
+
+				<button id="transaction-submit" type="submit" disabled>send</button>
+				<!-- ADD TRANSACTION ICON - POSITION LEFT -->
+				<div class="search-account">
+					<div class="search-input-div">
+						<input
+							id="search-input"
+							type="text"
+							placeholder="FROM: Search Account"
+						/>
+						<button type="button" id="close-search">X</button>
+					</div>
+					<ul class="search-results"></ul>
+				</div>
+			</form>
+
+			<section class="account-section">
+				<h3>account list</h3>
+				<ul class="account-list">
+					<li>No active accounts...</li>
+				</ul>
+			</section>
+			<section class="transaction-section">
+				<h3>transaction history</h3>
+				<ul class="transaction-list">
+					<li>No recent transactions...</li>
+				</ul>
+				<!-- REVISION - III -->
+				<form class="filter-transaction-form">
+					<div class="form-control">
+						<input
+							type="text"
+							id="filter-transaction-input"
+							placeholder="Filter by name..."
+						/>
+
+						<button type="button" id="close-transaction-btn">X</button>
+					</div>
+					<div id="filter-transaction-type">
+						<button type="button" id="filter-type-from" class="t-type">
+							from
+						</button>
+						<button type="button" id="filter-type-to" class="t-type">to</button>
+						<button type="button" id="filter-type-any" class="t-type active">
+							all
+						</button>
+					</div>
+					<div class="transaction-filter-container">
+						<h4>Results <span id="f-count">(0)</span></h4>
+						<ul id="filter-transaction-results">
+							<li>hey hey</li>
+							<li>hey hey</li>
+							<li>hey hey</li>
+							<li>hey hey</li>
+						</ul>
+					</div>
+					<div class="filter-transaction-cta">
+						<button type="button" id="f-t-reset">reset</button>
+						<button type="button" id="f-t-done">done</button>
+					</div>
+				</form>
+				<button type="button" id="open-transaction-btn">filter</button>
+				<div id="transaction-filter-overlay"></div>
+			</section>
+
+			<!-- REVISION - III -->
+
+			<form id="product-form">
+				<input type="text" name="product-name" placeholder="Product Name..." />
+				<input type="text" name="product-price" placeholder="Price..." />
+				<input type="text" name="product-quantity" placeholder="Quantity..." />
+
+				<button type="submit" disabled id="add-product-btn">Add Product</button>
+			</form>
+			<form id="cart-form">
+				<button id="select-user-cart" type="button">Select Payer</button>
+				<button class="cart-total-btn" type="button" disabled>
+					Total: <span id="cart-total">$0</span>
+				</button>
+				<button type="submit" id="place-order" disabled>Place Order</button>
+
+				<ul id="payer-list">
+					<div class="payer-list-title">
+						<h3>Select Payer</h3>
+						<button id="close-payer-list" type="button">X</button>
+					</div>
+					<ul class="payer-list-ul">
+						<li class="payer-list-item">No active users found...</li>
+					</ul>
+				</ul>
+			</form>
+
+			<section id="product-section">
+				<h3>Product Catalogue</h3>
+				<ul id="product-list">
+					<li>No available products...</li>
+				</ul>
+			</section>
+			<section id="cart-section">
+				<h3>Shopping Cart</h3>
+				<ul id="cart-list">
+					<li>Shopping cart is currently empty...</li>
+				</ul>
+			</section>
+		</main>
+		<script src="./app.js"></script>
+		<script src="./utils.js"></script>
+	</body>
+</html>
